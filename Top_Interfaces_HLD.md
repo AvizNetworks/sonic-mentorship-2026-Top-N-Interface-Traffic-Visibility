@@ -72,8 +72,6 @@ This document describes the high level design of the Top N Interfaces by Traffic
 |--------------------------|--------------------------------------------|
 | RX                       | Receive / Ingress traffic                  |
 | TX                       | Transmit / Egress traffic                  |
-| BPS                      | Bytes per second                           |
-| Mbps                     | Megabits per second                        |
 | COUNTERS_DB              | Redis database instance (DB 2) storing telemetry counters |
 | FC                       | Flex Counter                               |
 | OID                      | SAI Object Identifier                      |
