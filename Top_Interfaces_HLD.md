@@ -967,6 +967,8 @@ The history push adds 6 Redis commands per port per polling cycle:
 
 For 128 ports at 1s polling: 768 additional Redis commands per second. Given Redis can handle ~100K commands/sec, this represents < 1% additional CPU load.
 
+#### Hazard Note: Clearly not the actual values in the above entire Section! Fix all the substitute values with proper values!
+
 # 9 Testing Requirements
 
 ## 9.1 Unit Test Cases: sonic-utilities
