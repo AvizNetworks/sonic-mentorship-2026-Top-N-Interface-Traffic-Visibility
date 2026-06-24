@@ -123,9 +123,9 @@ The design follows the principle of **maximum reuse of existing infrastructure**
                     ┌─────────▼──────────┐
                     │ NEW: Thin Filter   │
                     │                    │
-                    │ get_top_n()         │
+                    │ get_top_n()        │
                     │ Sort + Rank + Top  │
-                    │ top CLI command   │
+                    │ top CLI command    │
                     └────────────────────┘
 ```
 
