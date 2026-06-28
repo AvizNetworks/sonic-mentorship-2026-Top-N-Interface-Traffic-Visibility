@@ -626,13 +626,11 @@ System tests are run on a real SONiC switch or a sonic-vs (Virtual Switch) to ve
     * Run `show interfaces counters rates` followed by `show interfaces counters top`.
     * Verify the reported BPS/PPS values match exactly, as both rely on the same `RATES:` table.
 
-# 14 Open/Action items - if any
-
-## 14.1 Stretch Goals
+# 14 Stretch Goals
 
 The following features are not part of the initial implementation but could be added as follow-up PRs:
 
-### 14.1.1 `--threshold` Flag
+### 14.1 `--threshold` Flag
 
 A `--threshold X` flag would show only interfaces exceeding X bytes/sec (or packets/sec). This is useful for alerting scripts that want to identify congested interfaces above a specific watermark.
 
@@ -642,15 +640,11 @@ show interfaces counters top --threshold 1000000000
 # Only shows interfaces with total rate > 1 GB/s
 ```
 
-### 14.1.2 `--reverse` Flag
+### 14.2 `--reverse` Flag
 
 A `--reverse` flag would sort ascending instead of descending, showing the **least** busy interfaces. This is useful for capacity planning and identifying underutilized interfaces.
 
-### 14.1.3 `--period` Fallback Mode
+### 14.3 `--period` Fallback Mode
 
 An optional `--period` flag could be added as a fallback to perform a two-sample delta calculation. This is useful for environments where the `port_rates.lua` plugin is not loaded and the `RATES:` table is unpopulated (such as Virtual Switch environments).
 When the `RATES:` table is empty or all values are `N/A`, and `--period` is not specified, the CLI could print a clear message suggesting the use of `--period`.
-
-## 14.2 Open Questions
-
-### Note: Will Add later.
