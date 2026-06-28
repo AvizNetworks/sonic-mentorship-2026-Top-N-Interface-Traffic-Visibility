@@ -575,7 +575,13 @@ During a fastboot, COUNTERS_DB is flushed. This means all `RATES:<oid>` entries 
 
 # 11 Memory Consumption
 
-TODO: Cover the memory consumption analysis for the new feature.
+Since the design is purely a CLI filter that reads from the pre-existing `RATES:` table populated by the existing `port_rates.lua` plugin, it does not add any new daemons, background processes, or database keys to the system. 
+
+Transient memory consumption only occurs during the brief execution window of the `show interfaces counters top` command:
+- The Python process fetches the `RATES:` data for all interfaces into a dictionary (identical to the memory footprint of the existing `show interfaces counters rates` command).
+- The `get_top_n()` method creates a list of tuples from this dictionary and performs an in-memory sort. 
+- For a high-density system (e.g., 512 ports), this sorting operation consumes only a few additional kilobytes of RAM.
+- All allocated memory is immediately freed when the CLI command completes.
 
 # 12 Things to be Considered
 
